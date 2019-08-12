@@ -1,0 +1,74 @@
+<div class="publications-display">
+  <div class="title-publication">
+    <h2>Experiencias</h2>
+  </div>
+  <% if (!publicationsList.length) { %>
+  <p>No existen experiencias</p>
+  <% } else { %>
+    <% let largo = publicationsList.length; %>
+    <% let index = 0;%>
+    <% let publication; %>
+    <% let par = 0;%>
+    <% publicationsList.forEach((publication, id) =>{ %>
+      <% if (largo >= 1) { %>
+        <% if (par == 0){ %>
+          <div class="publications-row">
+            <div class="publication-left">
+              <% if (publication.images.length > 0) { %>
+                  <img id='pub-image' src="<%= publication.images[0] %>">
+
+              <% } else {%>
+                <img id='pub-image' src="<%= assetPath('paisaje.png') %>" >
+              <% }%>
+              <div class="info-pub">
+                <h4><%= publication.title %></h4>
+                <p class="date"><%= publication.date %></p>
+                <p class="place"><%= publication.place %></p>
+                <p class="country"> (<%= publication.country %>)</p>
+                <a class="show-pub" href="<%- showPublicationPath(publication) %>">Mostrar</a>
+              </div>
+            </div>
+          <% par = 1; %>
+        <%} else { %>
+            <div class="publication-right">
+                <% if (publication.images.length > 0) { %>
+                    <img id='pub-image' src="<%= publication.images[0] %>">
+
+                <% } else {%>
+                  <img id='pub-image' src="<%= assetPath('paisaje.png') %>" >
+                <% }%>
+              <div class="info-pub">
+                <h4><%= publication.title %></h4>
+                <p class="date"><%= publication.date %></p>
+                <p class="place"><%= publication.place %></p>
+                <p class="country"> (<%= publication.country %>)</p>
+                <a class="show-pub" href="<%- showPublicationPath(publication) %>">Mostrar</a>
+              </div>
+            </div>
+          </div>
+          <% par = 0; %>
+        <% } %>
+      <% } else { %>
+        <div class="publications-row">
+          <div class="publication-left">
+            <% if (publication.images.length > 0) { %>
+              <% publication.images.forEach( (url) => { %>
+                <img id='pub-image' src="<%= url %>">
+              <% })%>
+            <% } else {%>
+              <img id='pub-image' src="<%= assetPath('paisaje.png') %>" >
+            <% }%>
+            <div class="info-pub">
+              <h4><%= publication.title %></h4>
+              <p class="date"><%= publication.date %></p>
+              <p class="place"><%= publication.place %></p>
+              <p class="country"> (<%= publication.country %>)</p>
+              <a class="show-pub" href="<%- showPublicationPath(publication) %>">Mostrar</a>
+            </div>
+          </div>
+        </div>
+      <%} %>
+      <%largo--;%>
+    <% }) %>
+  <% } %>
+</div>

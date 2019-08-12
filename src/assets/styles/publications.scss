@@ -1,0 +1,321 @@
+// Todo el codigo de la tabla de publicaciones.
+#publication-main-title {
+  text-align: center;
+  color:#333;
+  min-width: 100px;
+  padding-bottom: 30px;
+}
+
+
+#aderecha{
+  float:right;
+}
+
+
+/* Para desplegar las publicaciones dentro de los journeys */
+div.publication {
+  form {
+    .field-publication {
+      margin-left: 0px;
+      margin-top: 10px;
+      margin-bottom: 0px;
+      display: inline-block;
+      label {
+        display: inline;
+        text-align: right;
+        vertical-align: top;
+      }
+    }
+    .field-chico{
+        display: inline-block;
+    }
+  }
+}
+
+
+.publication-display{
+  background: rgba(197, 197, 197, 0.47);
+  border-radius: 15px;
+  border: 2px solid #000000;
+  min-height: 620px;
+  min-width: 650px;
+  width: 80%;
+  margin: 0 auto;
+  transform: translateY(120px);
+  margin-bottom: 100px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.692);
+  text-decoration:none;
+  text-align: center;
+
+  h1 {
+    padding: 20px;
+    background: rgba(57, 57, 57, 0.88);
+    width: 80%;
+    min-height: 40px;
+    max-height: 80px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    color: white;
+    border: 1px solid black;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black
+  }
+
+  h1.none {
+    margin-bottom: 0px;
+  }
+
+  .title-user-pub {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.884);
+    width: 80%;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    color: white;
+  }
+
+  .title-user-pub.none {
+    margin-bottom: 0px;
+  }
+  
+  .sin-publicaciones {
+    font-size: 24px;
+    padding: 25px;
+    margin-bottom: 25px;
+  }
+
+  .new {
+    margin-bottom: 20px;
+    display: inline-block;
+
+    .new-publication {
+      margin: 0 auto;
+      padding: 25px;
+      width: 35%;
+      height: 20px;
+      text-decoration:none; 
+      background: #7a448c;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      border-radius: 10px;
+      border: 1px solid purple;
+    }
+    
+    .new-publication:hover {
+      background: rgb(149, 96, 170);
+    }
+  }
+
+  .acciones {
+    margin: 0 auto;
+    .new {
+
+      margin-bottom: 20px;
+      display: inline-block;
+  
+      .new-publication {
+        margin: 0 auto;
+        padding: 30px;
+        width: 35%;
+        height: 20px;
+        text-decoration:none; 
+        background: rgba(221, 128, 186, 0.973);
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        border-radius: 20px;
+      }
+      
+      .new-publication:hover {
+        background: rgb(252, 157, 193);
+      }
+    }
+  }
+
+  .single-publication {
+    margin: 30px 30px;
+    background: rgb(212, 212, 212);
+		border-radius: 15px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.692);
+    min-height: 450px;
+    text-align: center;
+    text-decoration:none;
+    min-width: 90%;
+
+    .imagen{
+      margin: 0 auto;
+      min-height: 450px;
+      //max-height: 500px;
+      width: 52%;
+      display: inline-block;
+      overflow:hidden;   
+      position:relative;
+      //height: 55%;
+
+      img {
+        margin: 0 auto;
+        
+        display: inline-block;
+        //width: 100%;
+        height: 85%;
+        padding: 6% 0 0 0 ;
+      }
+
+      i {
+        float: left;
+        display: inline-block;
+        min-height: 450px;
+        max-height: 500px;
+        width: 100%;
+        border-radius: 15px;
+        float: left;
+        transform: translateY(20%);
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.692);
+      }
+    }
+
+    .publication-info {
+      display: inline-block;
+      border-radius: 10px;
+      width: 47%;
+      max-height: 500px;
+      float: right;
+      margin: 0;
+      text-decoration:none;
+      text-align: center;
+      color: #000000;
+      :hover{
+        opacity: 0.8;
+      }
+      .pub-details {
+        width: 100%;
+        float: right;
+        height: 450px;
+        text-align: center;
+        
+
+        h2 {
+          color: #32627f;
+          text-align: justify;
+          width: 85%;
+          margin: 0 auto;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          text-align: center;
+          font-family: 'Helvetica Neue', sans-serif;
+          font-size: 24px;
+          font-weight: bold;
+
+  
+        }
+  
+        .place {
+          background: rgba(241, 241, 241, 0.973);
+          display: inline-block;
+          min-width: 95%;
+          height: 20px;
+          padding: 5px;
+          color: black;
+          margin-bottom: 10px;
+          border-radius: 10px;
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+  
+        .description {
+          color: black;
+          font-size: 16px;
+          width: 85%;
+          text-align: justify;
+          margin: 0 auto;
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+
+        .date {
+          background: rgba(241, 241, 241, 0.973);
+          display: inline-block;
+          min-width: 55%;
+          height: 15px;
+          padding: 5px;
+          color: black;
+          margin-bottom: 10px;
+          border-radius: 10px;
+          font-size: 14px;
+          margin-bottom: 10px;
+        }
+  
+        .username {
+          background: rgba(241, 106, 106, 0.973);
+          border: 2px solid rgb(250, 206, 206);
+          display: inline-block;
+          min-width: 85%;
+          height: 20px;
+          padding: 5px;
+          color: white;
+          margin-bottom: 10px;
+          border-radius: 10px;
+          font-size: 18px;
+          margin-bottom: 10px;
+  
+        }
+      }
+    }
+  }
+
+  .single-publication:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.692);
+  }
+}
+
+#sin-resultado {
+  background: rgba(176, 230, 233, 0.466);
+  border-radius: 15px;
+  border: 2px solid #000000;
+  min-height: 250px;
+  width: 80%;
+  margin: 0 auto;
+  transform: translateY(120px);
+  margin-bottom: 100px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.692);
+  text-decoration:none;
+  margin-bottom: 150px;
+  text-align: center;
+
+  h2 {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.884);
+    width: 80%;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    border-radius: 10px;
+    color: white;
+  }
+
+  .volver-pub {
+    margin: 0 auto;
+    padding: 30px;
+    width: 35%;
+    height: 20px;
+    text-decoration:none; 
+    background: rgba(221, 128, 186, 0.973);
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 20px;
+  }
+  
+  .volver-pub:hover {
+    background: rgb(252, 157, 193);
+  }
+}

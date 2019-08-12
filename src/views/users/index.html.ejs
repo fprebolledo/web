@@ -1,0 +1,38 @@
+<% if ((usersList.length) || (!fromsearch)) { %>
+  <div class="display-usuarios">
+    <h1>Usuarios</h1>
+    <% if (!usersList.length) { %>
+      <p class="sin-usuarios">No results</p>
+    <% } else { %>
+      <% usersList.forEach((user) => { %>
+        <div class='single-user'>
+          <a class="img-perfil" href="<%- showUserPath(user) %>">
+            <% if (!user.imageUrl)  {%>
+              <i class="fas fa-id-badge"></i>
+            <% } else {  %>
+              <img src="<%- user.imageUrl %>"> 
+            <% } %>
+          </a>
+          <a class="user-info" href="<%- showUserPath(user) %>">
+            <div class="user-details">
+              <% if (!user.influencer) {%>
+                <p class="name"><%- user.name %></p>
+                <div class="username">
+                  <%- user.username %>
+                </div>
+              <%} else {%>
+                <p class="name"><%- user.name %> <i class="fas fa-user-plus">Destacado</i></p>
+                <div class="username influencer">
+                    <%- user.username %>
+                </div>
+              <% } %>
+              <div class='description'><%- user.description.substring(0, 250) %></div>
+              <div class='publicaciones'>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% }) %>
+    <% } %>
+  </div>
+<% } %>

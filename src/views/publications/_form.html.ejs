@@ -1,0 +1,8 @@
+<div>
+    <% if (fromusernew) {%>
+      <div data-url="<%= submitPublicationPath(user) %>"  data-new="1" data-userid="<%= currentUser.id%>" data-publicationid="<%= publication.id%>" id="react-form"></div>
+      <%} else {%>
+      <div data-url="<%= submitPublicationPath(publication) %>" data-new="0" data-userid="<%= currentUser.id%>" data-publicationid="<%= publication.id%>" id="react-form"></div>
+      <% } %>
+  </form>
+</div>

@@ -1,0 +1,61 @@
+<h2 class="title-show">Comments</h2>
+    <% if (!commentsList.length) { %>
+    <p>No existen comentarios</p>
+    <% } else { %>
+  <div class="comentarios">
+  <table id="comments-list">
+    
+  
+  <tbody>
+  <% commentsList.forEach((comment) => { %>
+      <tr class="fila">
+      
+      <td id="box-comment">
+          <div class="comment-content">
+              <div class="header">
+                <h4 id="comment-username"><%- userList.find((user) => comment.userId == user.id).username %></h4>
+                <div id="derecha">
+                <h5 class = "dropdown" id="comment-date"> <%= comment.date %></h5>
+                <% if (currentUser && currentUser.id == comment.userId) {%>
+                  
+                  <div class="dropdown" id="dropdown">
+                      <button class="dropbtn"><i class="fas fa-angle-down"></i> </button>
+                      <div class="dropdown-content">
+                        <a href="<%- editCommentPath(comment) %>">Editar</a>
+                        <form action="<%- deleteCommentPath(comment) %>" method="POST">
+                        <input type="hidden" name="_method" value="delete" />
+                        <input type="submit" value="Borrar" />
+                        </form>
+            
+                      </div>
+                  </div>
+                  <%} %>
+                </div>
+              </div>
+              <div class="contenido-comentario">
+                <p> <%= comment.content%></p>
+              </div>
+              <div class="comentario <%-comment.id %>">
+
+              </div>
+              <div class="abajo">
+                  <label for="ranking" id="ranking"> ranking:  <%= comment.ranking%> </label>
+                  <div class="mg">
+                  <a href="<%- commentLikePath(comment, 'megusta') %>" class="dropbtn" id="megusta" ><i class="far fa-thumbs-up"></i></a>
+                  <a href="<%- commentLikePath(comment, 'nomegusta') %>"class="dropbtn" id="nomegusta"><i class="far fa-thumbs-down"></i></a>
+                </div>
+              </div>
+          </div>
+        </td>
+
+      
+      </tr>
+  <% }) %>
+  </tbody>
+
+<% } %>
+</table>
+
+
+
+</div>

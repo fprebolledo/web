@@ -1,0 +1,32 @@
+<% if (!currentUser) { %>
+  <div id="login">
+		<h2>Ingrese sus datos</h2>
+		<% if (locals.error) { %>
+			<div class='error'><%= error %></div>
+		<% } %>
+		<% if (locals.notice) { %>
+			<div class="error"> <%= notice %> </div>
+		<% } %>
+		<form action="<%= createSessionPath %>" method="post">
+			<input type="hidden" name="_method" value="put" />
+			<div class="field-login">
+				<label id="login-correo">Correo</label>
+				<input id="login-valor" type="email" name="email" value="<%= email%>" />
+			</div>
+			<div class="field-login">
+				<label>Contraseña</label>
+				<input type="password" name="password" />
+			</div>
+			<div class="acceder">
+				<input type="submit" name="sign-in" value="Acceder" />
+			</div>
+		</form>
+		<a class="cuenta-nueva" href="<%= createUser %>">¿Aún no tienes cuenta? Regístrate</a>
+	</div>
+<% } else { %>
+  <div id="invalid-route">
+    <img src="http://www.stickpng.com/assets/images/5897a8c3cba9841eabab6156.png">
+    <h2>Debes cerrar sesión para ingresar con otro usuario</h2>
+    <a class="volver" href="/">Menú principal</a>
+  </div>
+<% } %>

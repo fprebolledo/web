@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <% if (env !== 'development') { %>
+   
+    <link rel="stylesheet" href="<%= assetPath('app.css') %>">
+  <% } %>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="<%= assetPath('favicon.ico')%>" type="image/ico" />;
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <title>Travel Plan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+  </head>
+
+  <body>
+    <div >
+      <ul class="navbar-list">
+        <li id="cosa">
+          <a id="travel" href="/" class="title">Travel Plan</a>
+        </li>
+        <li class="escondida">
+          <a href="/journeys">Viajes</a>
+        </li>
+        <li class="escondida">
+          <a href="/publications">Experiencias</a>
+        </li>
+        <% if (currentUser) { %>
+        <li class = "submenu">
+          <p>Más opciones</p>
+          <div class="dropdown-content">
+            <a id="mostrar-usuario" href="/users/<%= currentUser.id  %>/show"><%= currentUser.username %></a>
+            <!-- <a class="escondida" href="/journeys">Viajes</a>
+            <a class="escondida" href="/publications">Experiencias</a> -->
+            <a href="<%= myPublications(currentUser)  %>">Mis Experiencias</a>
+            <a href="<%= myJourneys(currentUser)  %>">Mis Viajes</a>
+            <a href="<%= myfollowins %>">Personas seguidas</a>
+            <form action="<%= destroySessionPath %>" method="post">
+              <input type="hidden" name="_method" value="delete" />
+              <input type="submit" value="Salir" />
+            </form>
+          </div>
+        </li>
+        <li class="right" id = "navbar-user">
+          <a id="esconder-usuario" href="/users/<%= currentUser.id  %>/show"><%= currentUser.username %></a>
+          <% if (currentUser.imageUrl) {%>
+            <a id="esconder-usuario2" href="/users/<%= currentUser.id  %>/show">          <img class = 'navbar-image' src="<%- currentUser.imageUrl %>"> 
+            </a>
+          <% } else {%>
+          <i id='navbar-image2' class="fas fa-id-badge"></i>
+          <% } %>
+
+        </li>
+        <% } else { %>
+        <li class="right">
+          <a class="username" href="<%= newSessionPath %>">Entrar</a>
+        </li>
+        <% } %>
+        <li class="right" >
+          <div class="search-container">
+            <form action="<%= searchPublicationPath %>" method="POST">
+              <input type="text" placeholder="¿Qué desea buscar?" name="search">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <%- body %>
+      <script src="<%= assetPath('app.js') %>"></script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<% if (currentUser) { %>
+  <div id="container">
+    <h2>Nuevo comentario</h2>
+    <%- include('_form') %>
+  </div>
+<% } else { %>
+  <div id="invalid-route">
+    <img src="http://www.stickpng.com/assets/images/5897a8c3cba9841eabab6156.png">
+    <h2>No tienes permitido crear comentarios</h2>
+    <a class="volver" href="/">Menú principal</a>
+  </div>
+<% } %>

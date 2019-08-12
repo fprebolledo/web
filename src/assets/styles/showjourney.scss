@@ -1,0 +1,362 @@
+#im-journey {
+    float: left;
+    margin-top: 20px;
+}
+
+.show-continent{
+    text-align: center;
+    align-content: center;
+}
+.continent-journey{
+    margin-left: 100px;
+}
+
+.description-journey{
+  margin: 0;
+}
+#stars-journey{
+  width: 250px;
+  float:left ;
+  margin-left: 15px;
+  align-content: center;
+}
+
+.list-publications{
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+.show-pub {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  background-color: #2da2ae;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  width: 90%;
+  font-size: 18px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.show-journey:hover{
+  opacity: 0.7;
+}
+
+.publications-row  {
+  text-align: center;
+}
+
+.publication-left {
+  display: inline-block;
+  margin: 10px 20px 10px 20px;
+  width: 400px;
+  border-radius: 30px;
+  background: rgba(57, 247, 174, 0.23);
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.publication-right {
+  display: inline-block;
+  margin: 10px 20px 10px 20px;
+  width: 400px;
+  padding: 10px;
+  border-radius: 30px;
+  background: rgba(57, 247, 174, 0.23);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+#pub-image{
+  height: 300px;
+  width: 100%;
+  border-radius: 30px;
+}
+.info-pub{
+  border-radius: 30px;
+  p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  h4 {
+    font-size: 16px;
+    color: white;
+    padding: 2px;
+    background: #7697c2;
+    border-radius: 10px;
+  }
+  .place {
+    font-size: 20px;
+  }
+  .country{
+    opacity: 0.75;
+  }
+  .date {
+    text-align: right;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    margin-top: -16px;
+    margin-bottom: -16px;
+    opacity: 0.85;
+  }
+  font-size: 18px;
+
+}
+
+.publications-display{
+  text-align: center;
+  margin: 0 auto;
+}
+
+.title-publication{
+  padding: 1px 20px 1px 20px;
+  margin: 0 auto;
+  background: rgb(167, 13, 13);
+  border-radius: 20px;
+  width: 75%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  h2 {
+    font-size: 20px;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+}
+
+.title-show{
+  padding: 20px;
+  background: rgb(167, 13, 13);
+  color: #FAFAFA;
+  font-size: 24px;
+  border-radius: 10px;
+  width: 95%;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.journey-imagen{
+  img {
+    padding: 20px;
+    height: 500px;
+    width: 80%;
+    border-radius: 50px;
+  }
+  text-align: center;
+}
+
+.journey-show{
+  padding: 10px;
+  align-content: center;
+}
+
+.journey-information {
+  text-align: center;
+  margin: 0 auto;
+  width: 90%;
+
+  .year{
+    opacity: 0.8;
+    text-align: right;
+    margin-right: 65px;
+  }
+
+  .description {
+    text-align: justify;
+    width: 90%;
+    margin: 0 auto;
+    padding: 15px 25px 15px 25px;
+    background: rgb(158, 216, 213);
+    border-radius: 25px;
+    margin-bottom: 15px;
+  }
+
+  .user-journey {
+    width: 40%;
+    margin-bottom: 5px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    border: 1.3px solid rgb(167, 13, 13);
+    display: inline-block;
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    max-height: 15px;
+    text-decoration: none;
+    color: #000;
+  }
+
+  .user-journey:hover {
+    background: rgb(175, 176, 177);
+  }
+
+}
+
+.datos {
+  text-align: center;
+  margin-bottom: 15px;
+  .dato {
+    width: 25%;
+    margin-bottom: 5px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    border: 1.3px solid rgb(167, 13, 13);
+    display: inline-block;
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: center;
+    max-height: 15px;
+
+		label {
+			text-align: left;
+			margin-left: 15px;
+			float: left;
+			font-family: Montserrat-SemiBold;
+      text-transform: uppercase;
+      font-size: 12px;
+      opacity: 0.70;
+      display: inline-block;
+		}
+		p {
+      font-family: Arial, sans-serif;
+      display: inline-block;
+      margin-top: -14px;
+      width: 80px;
+    }
+  
+  }
+  .continent {
+    font-style: oblique;
+  }
+}
+
+.publications-row  {
+  text-align: center;
+}
+
+
+.publication {
+  text-align: center;
+  margin-top: 100px;
+  background: rgba(52, 197, 185, 0.863);
+  width: 80%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-top: 60px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 10px;
+
+  h3 {
+    margin-top: 40px;
+    padding: 15px;
+    background: rgb(167, 13, 13);
+    color: white;
+    font-size: 20px;
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+
+  .field-pub {
+    text-align: center;
+    background: rgba(20, 68, 60, 0.582);
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 60%;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    
+    label {
+      text-align: left;
+      display: inline-block;
+      color: white;
+      font-size: 20px;
+    }
+    input {
+      text-align: rigth;
+      margin-left: 50px;
+      padding: 5px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      display: inline-block;
+      float: right;
+      position: relative;
+      transform: translateY(-45%);
+      border-radius: 10px;
+    }
+  }
+
+  .field-pub.description {
+    text-align: center;
+    label {
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      padding: 5px;
+      margin-bottom: 5px;
+      font-size: 20px;
+
+    }
+
+    textarea {
+      min-width: 95%;
+      max-width: 100%;
+      min-height: 100px;
+      border-radius: 10px;
+    }
+  }
+
+  .create-pub {
+    margin-top: 20px;
+    input {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: rgb(167, 13, 13);
+      text-align: center;
+      cursor: pointer;
+      width: 30%;
+      font-size: 22px;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+  }
+
+}
+
+.new-jour-pub {
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  display: inline-block;
+  text-align: center;
+  background: #000;
+  margin-left: 35%;
+
+  a {
+    
+    padding: 30px;
+    width: 35%;
+    height: 20px;
+    text-decoration:none; 
+    background: #7a448c;;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 20px;
+  }
+  
+  a:hover {
+    background: #7a448ca1;
+  }
+}

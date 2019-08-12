@@ -1,0 +1,58 @@
+
+
+<% if (currentUser && currentUser.influencer) { %>
+  <div class='publication-display influencer'>
+<%} else { %>
+  <div class='publication-display'>
+<%} %>
+
+<% if (!fromfollowins) { %>
+<h1 class="none">Experiencias de nuestros usuarios</h1>
+<% if (currentUser) { %>
+  <div class="new">
+    <a class="new-publication" href="<%- newPublicationPath(currentUser) %>"> ¡Publica tu experiencia aquí! </a>
+  </div>
+<% } %>
+<% } else { %>
+    <h1 class="none">Experiencias de tus personas seguidas</h1>
+ <% } %>
+ 
+  <% if (!publicationsList.length) { %>
+    <p class="sin-publicaciones">Sin resultados</p>
+
+  <% } else { %>
+
+    <% publicationsList.forEach((publication) => { %>
+
+      <% if (!publication.journeyId) {%>
+
+        <% if (currentUser && publication.userId == currentUser.id) {%>
+          <div class='single-publication currentUser'>
+        <% } else { %>
+          <div class='single-publication'>
+        <%} %>
+
+        <a class="imagen" href="<%- showPublicationPath(publication) %>">
+
+          <% if (!publication.images || !publication.images.length) {%>
+            <img src="<%= assetPath('paisaje.png') %>" >
+              <% } else {  %>
+            <img src="<%- publication.images[0] %>"> 
+          <% }  %>
+        </a>
+
+        <a class="publication-info" href="<%- showPublicationPath(publication) %>">
+          <div class="pub-details">
+          <h2><%- publication.title %></h2>
+            <div class='place'><%- publication.place %></div>
+            <div class='place'><%- publication.country %></div>
+            <div class='description'><%- publication.description.substring(0, 150) %></div>
+            <div class='username'><%- userList.find((user) => publication.userId == user.id).username %></div>
+            <div class='date'><%= publication.date %></div>
+          </div>
+        </a>
+        </div>
+      <% }  %>
+    <%})%>
+  <% }%>
+</div>

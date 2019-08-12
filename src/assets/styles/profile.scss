@@ -1,0 +1,210 @@
+.profile-display {
+	
+	margin: 0 auto;
+	text-align: center;
+	background: #b7cfcf;
+	width: 70%;
+	transform: translateY(80px);
+	margin-bottom: 100px;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.692);
+
+	h2 {
+		text-align: center;
+		font-weight: bold;
+		width: 76%;
+		margin: 0 auto;
+		background: rgb(57, 112, 184);
+		font-size: 24px;
+		padding: 15px;
+		border-radius: 5px;
+		color: white;
+	}
+
+	.titulo-influencer {
+		color: rgb(255, 253, 245);
+		background: rgb(218, 184, 75);
+	}
+
+	.profile-show{
+		border-radius: 5px;
+		height: 350px;
+		text-align: center;
+		text-decoration:none;
+		width: 80%;
+		margin: 0 auto;
+		padding: 25px 15px 15px 15px;
+	
+		.profile-image {
+			border-radius: 5px;
+			height: 325px;
+			width: 42%;
+			display: inline-block;
+			//float: left;
+			background: transparent;
+			box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.692);
+			overflow:hidden;   
+			//position:relative;
+			margin: 0;
+			
+			
+			img {
+				margin: 0 auto;
+				height: 90%;
+				//width: 100%;
+				border-radius: 5px;
+				padding: 4% 0 0 0 ;
+				//left: 10%;
+				object-fit: scale-down;
+				display:block;
+			}
+			.fas.fa-id-badge{
+				font-size: 300px;
+			}
+		}
+	
+		.profile-info {
+			display: inline-block;
+			background: rgb(208, 230, 231);
+			border-radius: 5px;
+			box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.692);
+			width: 53%;
+			font-size: 20px;
+			height: 325px;
+			float: right;
+
+			.name {
+				font-size: 30px;
+				background: white;
+				padding: 5px 0 5px 0;
+				color: darkcyan;
+			}
+
+			.username {
+				font-size: 20px;
+				color: rgb(83, 83, 83);
+				margin-top: -10px;
+			}
+
+			.puntaje {
+				color: #656565;;
+				margin-top: 0px;
+				border-radius: 5px;
+				background: white;
+				padding: 10px;
+			}
+
+			.email {
+				margin: 0 auto;
+				padding: -15px;
+				width: 70%;
+				img {
+					height: 40px;
+					display: inline-block;
+					float: left;
+					margin-top: 5px;
+				}
+				p {
+					display: inline-block;
+					font-size: 16px;
+				}
+			}
+		}
+	
+		.profile-info.influencer {
+			background: rgb(221, 189, 86);
+		}
+	}
+
+	.description {
+		margin: 0 auto;
+		background: rgb(248, 247, 247);
+		padding: 10px;
+		border-radius: 5px;
+		text-align: center;
+		width: 85%;
+
+		p {
+			color: black;
+			font-size: 20px;
+			text-align: center;
+		}
+	}
+
+	.acciones {
+		margin: 0 auto;
+		min-width: 20%;
+		max-width: 85%;
+		padding: 10px;
+		text-align: center;
+		margin-bottom: 15px;
+
+		.user-button {
+			display: inline-block;
+			padding-left: 30px;
+			padding-right: 30px;
+			margin-bottom: 15px;
+			
+			a {
+				text-decoration: none;
+				width: 70%;
+				padding: 15px 25px 15px 25px;
+				background: rgb(56, 131, 228);
+				border-radius: 5px;
+				text-decoration: none;
+				color: white;
+				font-size: 18px;
+				box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.692);
+			}
+
+
+			a:hover {
+				background: rgba(103, 165, 247, 0.712);
+			}
+
+			form {
+				input {
+					text-decoration: none;
+					cursor: pointer;
+					padding: 13px 25px 11px 25px;
+					background: #c10b0b;
+					border-radius: 5px;
+					text-decoration: none;
+					color: white;
+					font-size: 18px;
+					width: 120%;
+					border: solid transparent;
+					box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.692);
+					margin-top: 20px;
+				}
+
+				input:hover {
+					background: black;
+				}
+			}
+		}
+
+		#seguidores{
+			padding: 10px;
+			width: 20%;
+
+			.user-button-seguir {
+				text-decoration: none;
+				width: 90%;
+				padding: 15px 25px 15px 25px;
+				background: rgb(56, 131, 228);
+				border-radius: 5px;
+				text-decoration: none;
+				color: white;
+				font-size: 18px;
+				box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.692);
+				border-color: rgba(255, 255, 255, 0);;
+			}
+
+			.user-button-seguir:hover {
+				background: rgba(103, 165, 247, 0.712);
+			}
+		}
+	}
+}

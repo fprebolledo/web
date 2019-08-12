@@ -1,0 +1,12 @@
+<% if (currentUser && publication && currentUser.id === publication.userId && user.id === currentUser.id) { %>
+  <div class="form-container">
+      <h2>Edita tu Experiencia </h2>
+      <%- include('_form') %>
+      </div>
+<% } else { %>
+  <div id="invalid-route">
+    <img src="http://www.stickpng.com/assets/images/5897a8c3cba9841eabab6156.png">
+    <h2>No tienes permitido editar Experiencias de otros</h2>
+    <a class="volver" href="/">Menú principal</a>
+  </div>
+<% } %>

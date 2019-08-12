@@ -1,0 +1,11 @@
+<div>
+  
+    
+    <% if (fromusernew) {%>
+      <div data-new="1" data-url="<%= submitJourneyPath(user) %>" id="react-journey"></div>
+      <%} else {%>
+      <div data-new="0" data-url="<%= submitJourneyPath(journey) %>" id="react-journey"></div>
+      <% } %>
+
+  </form>
+</div>

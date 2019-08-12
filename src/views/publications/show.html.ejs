@@ -1,0 +1,11 @@
+<div id="container">
+  <div id='publication-header'>
+    <h2 class="publication-title"><%- publication.title %></h2>
+    <a href='/users/<%-publication.userId%>/show'>(<%- userList.find((user) => publication.userId == user.id).username %>)</a>
+  </div>
+  <% if (currentUser) { %>
+    <%- include('_show2') %>
+  <% } else {%>
+    <%- include('../session/new') %>
+  <% }%>
+</div>

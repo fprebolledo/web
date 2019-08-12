@@ -1,0 +1,141 @@
+.fas.fa-id-badge{
+  font-size: 190px;
+  color: rgb(25, 56, 75);
+  padding: 10px 0;
+}
+
+.display-usuarios {
+  background-color: rgba(197, 197, 197, 0.47);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.692);
+  border-radius: 15px;
+  min-width: 550px;
+  width: 70%;
+  padding: 40px;
+  margin: 0 auto;
+  margin-top: 100px;
+  font-family: 'Helvetica Neue', sans-serif;
+  
+  h1 {
+    margin: 0 auto;
+    background: rgba(57, 57, 57, 0.88);
+    color:white;
+    padding: 10px;
+    border-radius: 15px;
+    width: 85%;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    border: 1px solid black;
+
+  }
+  .sin-usuarios {
+    font-size: 24px;
+    padding: 25px;
+    margin-bottom: 25px;
+  }
+
+  .single-user {
+    margin-top: 30px;
+    background: rgb(241, 240, 240);
+		border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.692);
+    width: 100%;
+    min-height: 325px;
+    max-height: 500px;
+    text-align: center;
+    text-decoration: none;
+
+    .img-perfil {
+      height: 325px;
+      width: 43%;
+      display: inline-block;
+      float: left;
+      overflow:hidden;   
+      position:relative;
+
+      img {
+        display: inline-block;
+        //width: 100%;
+        height: 85%;
+        padding: 6% 0 0 0 ;
+      }
+
+      i {
+        margin: 0 auto;
+        display: inline-block;
+        min-height: 325px;
+        width: 50%;
+        border-radius: 5px;
+        transform: translateY(20%);
+      }
+    }
+
+    .user-info {
+      display: inline-block;
+      border-radius: 5px;
+      width: 57%;
+      height: 350px;
+      float: right;
+      margin: 0;
+      text-decoration:none;
+      text-align: center;
+
+      .user-details {
+        width: 100%;
+        float: right;
+        height: 325px;
+        text-align: center;
+        display: inline-block;
+        text-decoration:none;
+
+        .name {
+          font-size: 30px;
+          color: darkcyan;
+          text-decoration:none;
+          .fas.fa-user-plus{
+            font-size: 20px;
+color: #e40000;
+          }
+        }
+
+        .username {
+          margin: 0 auto;
+          font-size: 20px;
+          background: rgb(167, 13, 13);
+          color: white;
+          width: 60%;
+          height: 20px;
+          border-radius: 5px;
+          text-decoration:none;
+          margin-bottom: 20px;
+          padding: 10px;
+          border: 1px solid black;
+        }
+
+        .username.influencer{
+          color: black;
+          background: #2ab4eb;
+          border: 1px solid black;
+          .fas.fa-user-plus{
+            color:#e40000;
+          }
+        }
+
+        .description {
+          margin: 0 auto;
+          font-size: 16px;
+          text-decoration:none;
+          color: black;
+          text-align: justify;
+          width: 90%;
+          padding: 15px;
+        }
+        .publicaciones {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  .single-user:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.692);
+  }
+}

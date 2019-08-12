@@ -1,0 +1,151 @@
+<div class="main-page">
+  <div id="main-image">
+    <div class="main-title">
+      <img src="https://ep01.epimg.net/elpais/imagenes/2018/03/01/album/1519910473_492871_1519910821_noticia_normal.jpg" alt="">
+      <div class="centeredtitle">
+        <h1>Travel Plan</h1>
+        <h4>La experiencia perfecta, para tí, para ellos</h4>
+      </div>
+      <div class="botones">
+        <div class="btn">
+          <a href="<%= createUser %>">Regístrate</a>
+        </div>
+        <div class="btn">
+          <a href="<%= newSessionPath %>">Ingresa</a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div>
+    <div id="continents">
+      <div class="continent-title">
+        <h2>Descubre Experiencias en cada continente</h2>
+      </div>
+      <div class= "cont" >
+        <a href="<%- pubPath('América') %>">
+          <i class="fas fa-globe-americas"></i>    
+        </a>
+        <div class="centered"> América </div>
+      </div>
+      <div class="cont">
+        <a  href="<%- pubPath('Asia') %>">
+          <i class="fas fa-globe-asia"></i>    
+        </a>
+        <div class="centered"> Asia </div>
+      </div>
+      <div class="cont">
+        <a  href="<%- pubPath('África') %>">
+          <i class="fas fa-globe-africa"></i>    
+        </a>
+        <div class="centered"> África </div>
+      </div>
+      <div class="cont">
+        <a  href="<%- pubPath('Europa') %>">
+          <i class="fas fa-globe-europe"></i>    
+        </a>
+        <div class="centered"> Europa </div>
+      </div>
+      <div class="cont">
+        <a  href="<%- pubPath('Oceanía') %>">
+          <i class="fas fa-globe-asia"></i>    
+        </a>
+        <div class="centered"> Oceanía </div>
+      </div>
+    </div>
+
+    <div id='users-destacados'>
+      <div class="titulo-destacados">
+        <h2>¡Inspirate con nuestros usuarios destacados!</h2>
+      </div>
+      <div class='user-th'>
+        <p class="info">Travel Planners que debido a sus grandes Viajes, han ganado
+          votos positivos por sus increibles relatos de Experiencias y sus valiosos aportes
+          al sitios a través de Comentarios</p>
+        <%userList.forEach((user) => {%>
+            <div class='user-td'>
+              <a id='refe' href='<%- showUserPath(user) %>'>
+                <img src='<%- user.imageUrl %>'>
+                <p class='usermail'><%- user.username %></p>
+                <p class='rank'>Ranking: <%- user.ranking %></p>
+              </a>
+            </div>
+        <% }) %>
+      </div>
+    </div>
+      
+    <div class="feature-list">
+      <div class="feature-text-lf">
+        <h2>Comparte tus Viajes con el mundo</h2>
+        <p>
+          Unete a una comunidad de los rincones más remotos del mundo, publica tus Viajes
+          alrededor del mundo, de tu tierra natal, de tu ciudad especial, de esos maravillosos
+          y ocultos lugares para visitar. Comparte dentro de ellas tus Experiencias, qué tal fue,
+          como la construiste y entrega consejos a los futuros Travel Planners de nuevos horizontes. 
+        </p>
+      </div>
+
+      <div class="feature-image-lf">
+        <img src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Ftimedotcom.files.wordpress.com%2F2018%2F03%2Fdigital-nomad-remote-work-travel.jpg" />
+      </div>
+    </div>
+
+    <div class="feature-list">
+      <div class="feature-image-rg">
+        <img src="https://www.intrepidtravel.com/adventures/wp-content/uploads/2016/05/small-group-tours-common-wanderer.jpg" alt="Perfil" width="175" height="175" />
+      </div>
+
+      <div class="feature-text-rg">
+        <h2>Encuentra Experiencias para una Viaje inigualable</h2>
+        <p>
+          El recuerdo de un Viaje para alguien en algún lugar remoto, puede ser el Viaje
+          ideal para tí al momento de descubrir el mundo. Navega y descubre cuál podría ser
+          tu recorrido favorito por un continente determinado visualizando los viajes que 
+          tenemos y las experiencias que agrupan ó comparte tu viaje para que otras personas
+          puedan ver el recorrido que tanto gusto por ese continente, no esperes mas!.
+        </p>
+      </div>
+    </div>
+
+    <div class="feature-list">
+      <div class="feature-text-lf">
+        <h2>Contáctate con quienes harán tu Viaje único</h2>
+        <p>
+          Comenta, puntúa y comparte tus ideas sobre los Viajes y Experiencias de las demás
+          Travel Planners a lo largo del mundo. Puedes de igual forma aclarar tus ideas y dar
+          consejos que te sirvieron a través de comentarios, para poder guiar a viajeros
+          en las nuevas travesias que pudiesen tener. Incluso puedes contactarte con Travel
+          Planners Destacados para ampliar tu circulo de personas con quienes Viajar.
+        </p>
+      </div>
+
+      <div class="feature-image-lf">
+        <img src="https://www.lonelyplanet.com/news/wp-content/uploads/2017/08/Copenhagen-bikes-cycing-Europe.jpg" alt="Perfil" width="175" height="175" />
+      </div>
+    </div>
+  </div>
+
+  <div id="main-features">
+    <h2>Sobre nosotros</h2>
+    <div>
+      <div class="main-feature">
+        <h3>Dedicación total</h3>
+        <p>Proyecto primordial para sus desarrolladores, entregados y dispuestos para complacer los servicios con el fin de poder conectar al universo de viajeros y aventureros.</p>
+      </div>
+
+      <div class="main-feature">
+        <h3>Open Source</h3>
+        <p>Código abierto para la comunidad de desarrollo de software con el fín de poder expandir y fortalecer los objetivos de Travel Plan en un mejor servicio a los viajeros.</p>
+      </div>
+
+      <div class="main-feature">
+        <h3>Colaborativa</h3>
+        <p>Las funcionalidades y el contenido presenta una gran dedicación por quienes las emiten. Desde el software a los destinos, Travel Plan se basa en pilares de colaboración.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+      <p>Import Team 2019 @ PUC</p>
+  </div>
+</div>

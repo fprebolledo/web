@@ -1,0 +1,151 @@
+<h2 class="title-comment"> Ultimos Comentarios</h2>
+    <% if (!commentsList.length) { %>
+    <p>No hay comentarios</p>
+    <% } else { %>
+  <div id="react-comments"></div>
+  <div class="comentarios">
+
+    <% commentsList.slice(Math.max(0, commentsList.length-5), commentsList.length).forEach ((comment) =>{ %>
+      <div class="fracaso">
+      <div id='p'>
+        <div class="header" id="user-comment"><%- userList.find((user) => comment.userId == user.id).username %></div>
+        <div class="header" id="date-comment"><%= comment.date %></div>
+        <% if (currentUser && currentUser.id == comment.userId) {%>
+          <div class="header" id="submenu">
+            <i class="fas fa-chevron-down"></i>
+            <div class="dropdown-content comment">
+                <a href="<%- editCommentPath(comment) %>">Editar comentario</a>
+                <form action="<%- deleteCommentPath(comment) %>" method="POST">
+                  <input type="hidden" name="_method" value="delete" />
+                  <input class="button-without delete" type="submit" value="Borrar comentario" />
+                </form>
+            </div>
+          </div>
+        <%}%>
+        <br>
+        <div id="commentj"><%= comment.content%></div>
+        <br>
+        <div class= "opciones">
+          <div id="likes-count">Votos: <%= comment.ranking%></div>
+          <% if (currentUser) {%>    
+              <% let likecomment = likecommentlist.find((like) => comment.id == like.commentId); %>
+              <% if (likecomment) { %>
+                  <% if (likecomment.value == -1) { %>
+                    <div>
+                      <form action="<%- updateCommentLikePath(comment, likecomment, 'megusta') %>" method="POST">
+                        <input type="hidden" name="_method" value="patch" />
+                        <button class= "button-without" type="submit"><i class="far fa-thumbs-up"></i></button>
+                      </form>
+                    </div>
+                    <div>
+                      <button class="button-without no"><i class="far fa-thumbs-down"></i></button>
+                    </div>
+                    <% } else if (likecomment.value == 1){ %>
+                      <div>
+                        <button class="button-without no"><i class="far fa-thumbs-up"></i></button>
+                      </div>
+                    <div >
+                      <form action="<%- updateCommentLikePath(comment, likecomment, 'nomegusta') %>" method="POST">
+                        <input type="hidden" name="_method" value="patch" />
+                        <button class= "button-without" type="submit"><i class="far fa-thumbs-down"></i></button>
+                      </form>
+                    </div>
+                  <% } else { %>
+                      <div>
+                        <form action="<%- updateCommentLikePath(comment, likecomment, 'megusta') %>" method="POST">
+                          <input type="hidden" name="_method" value="patch" />
+                          <button class= "button-without" type="submit"><i class="far fa-thumbs-up"></i></button>
+                        </form>
+                      </div>
+                      <div>
+                        <form action="<%- updateCommentLikePath(comment, likecomment, 'nomegusta') %>" method="POST">
+                          <input type="hidden" name="_method" value="patch" />
+                          <button class= "button-without" type="submit"><i class="far fa-thumbs-down"></i></button> 
+                        </form>
+                      </div>
+                  <% } %>
+                <%} else { %>
+                  <div class="like"><a href="<%- commentLikePath(comment, 'megusta', publication) %>" class="dropbtn" id="megusta" ><i class="far fa-thumbs-up"></i></a></div> 
+                  <div class="like"><a href="<%- commentLikePath(comment, 'nomegusta', publication) %>"class="dropbtn" id="nomegusta"><i class="far fa-thumbs-down"></i></a></div>
+                <% } %>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+  <% if (destacados.length) {%>
+  <button type="button" id="verdestacados">Mostrar destacados</button>
+  <% }%>
+  <div id="destacados">
+      <h2 class="title-comment">DESTACADOS</h2>
+      <% destacados.forEach ((comment) =>{ %>
+        <div class="fracaso">
+        <div id='p'>
+          <div class="header" id="user-comment"><%- userList.find((user) => comment.userId == user.id).username %></div>
+          <div class="header" id="date-comment"><%= comment.date %></div>
+          <% if (currentUser && currentUser.id == comment.userId) {%>
+            <div class="header" id="submenu">
+              <i class="fas fa-chevron-down"></i>
+              <div class="dropdown-content comment">
+                  <a href="<%- editCommentPath(comment) %>">Editar comentario</a>
+                  <form action="<%- deleteCommentPath(comment) %>" method="POST">
+                    <input type="hidden" name="_method" value="delete" />
+                    <input class="button-without delete" type="submit" value="Borrar comentario" />
+                  </form>
+              </div>
+            </div>
+          <%}%>
+          <br>
+          <div id="commentj"><%= comment.content%></div>
+          <br>
+          <div class= "opciones">
+            <div id="likes-count">Votos: <%= comment.ranking%></div>
+            <% if (currentUser) {%>    
+                <% let likecomment = likecommentlist.find((like) => comment.id == like.commentId); %>
+                <% if (likecomment) { %>
+                    <% if (likecomment.value == -1) { %>
+                      <div>
+                        <form action="<%- updateCommentLikePath(comment, likecomment, 'megusta') %>" method="POST">
+                          <input type="hidden" name="_method" value="patch" />
+                          <button class= "button-without" type="submit"><i class="far fa-thumbs-up"></i></button>
+                        </form>
+                      </div>
+                      <div>
+                        <button class="button-without no"><i class="far fa-thumbs-down"></i></button>
+                      </div>
+                      <% } else if (likecomment.value == 1){ %>
+                        <div>
+                          <button class="button-without no"><i class="far fa-thumbs-up"></i></button>
+                        </div>
+                      <div >
+                        <form action="<%- updateCommentLikePath(comment, likecomment, 'nomegusta') %>" method="POST">
+                          <input type="hidden" name="_method" value="patch" />
+                          <button class= "button-without" type="submit"><i class="far fa-thumbs-down"></i></button>
+                        </form>
+                      </div>
+                    <% } else { %>
+                        <div>
+                          <form action="<%- updateCommentLikePath(comment, likecomment, 'megusta') %>" method="POST">
+                            <input type="hidden" name="_method" value="patch" />
+                            <button class= "button-without" type="submit"><i class="far fa-thumbs-up"></i></button>
+                          </form>
+                        </div>
+                        <div>
+                          <form action="<%- updateCommentLikePath(comment, likecomment, 'nomegusta') %>" method="POST">
+                            <input type="hidden" name="_method" value="patch" />
+                            <button class= "button-without" type="submit"><i class="far fa-thumbs-down"></i></button> 
+                          </form>
+                        </div>
+                    <% } %>
+                  <%} else { %>
+                    <div class="like"><a href="<%- commentLikePath(comment, 'megusta', publication) %>" class="dropbtn" id="megusta" ><i class="far fa-thumbs-up"></i></a></div> 
+                    <div class="like"><a href="<%- commentLikePath(comment, 'nomegusta', publication) %>"class="dropbtn" id="nomegusta"><i class="far fa-thumbs-down"></i></a></div>
+                  <% } %>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>
+<% } %>

@@ -1,0 +1,12 @@
+<% if (currentUser && user.id === currentUser.id) { %>
+  <div class="form-container">
+    <h2 class="form-title">Ingresa todos los datos que quieras cambiar</h2>
+    <%- include('_form') %>
+  </div>
+<% } else { %>
+  <div id="invalid-route">
+    <img src="http://www.stickpng.com/assets/images/5897a8c3cba9841eabab6156.png">
+    <h2>No tienes permitido editar el perfil de otros</h2>
+    <a class="volver" href="/">Menú principal</a>
+  </div>
+<% } %>

@@ -1,0 +1,15 @@
+<div id="new-comment-publication">
+	<% if (currentUser) { %>
+		<div class="comment">
+			<form action="<%= submitCommentPath(publication) %>" method="post">
+				<div class="field-comment">
+					<textarea type="text" name="content" placeholder="Ingrese su opinión de la publicación aquí..." value="<%=com.content%>"></textarea>
+					<input type="hidden" name="userId" value="<%=currentUser.id%>" />
+				</div>
+				<div class="field-chico">
+					<input  type="submit" name="create" value="Crear" />
+				</div>
+			</form>
+		</div>
+	<%}%>
+</div>

@@ -1,0 +1,17 @@
+<% if ((!publicationsList.length) && (!usersList.length)) { %>
+	<div id="sin-resultado">
+		<h2>No existen resultados para la busqueda</h2>
+		<a class="volver-pub" href="/publications">Volver a Experiencias</a>
+	</div>
+<% } else { %>
+	<% if (usersList.length) { %>
+		<%- include('../users/index') %>
+	<% } %>
+	<% if (publicationsList.length) { %>
+		<%- include('../publications/index') %>
+	<% } %>
+	<% if (journeysList.length) { %>
+		<%- include('../journeys/index') %>
+	<% } %>
+<% } %>
+

@@ -1,0 +1,38 @@
+<div class="journey-show">
+  <div class="journey-imagen">
+      <% if (!journey.imageUrl){%>
+        <img src="<%= assetPath('paisaje.png') %>" >
+      <% } else {  %>
+        <img src="<%- journey.imageUrl %>">
+      <% }  %>
+  </div>
+
+  <div class="journey-information">
+    <h2 class="title-show"><%- journey.title %></h2>
+
+    <div class="datos">
+      <div class="dato"> 
+        <label>Continente:</label>
+        <p><%= journey.continent %></p>
+			</div>
+			<div class="dato"> 
+				<label>Puntaje:</label> 
+				<p ><%= journey.ranking %></p>
+			</div>
+			<div class="dato"> 
+				<label>Año:</label> 
+				<p ><%= journey.year %></p>
+			</div>
+    </div>
+    <p class="description"><%= journey.description %></p>
+    
+    <a class="user-journey" href="<%- showUserPath(userList.find((user) => journey.userId == user.id)) %>">
+      Autor: @<%- userList.find((user) => journey.userId == user.id).username %>
+    </a>
+    
+  </div>
+</div>
+<%- include('pubs')%>
+<div class="new-jour-pub ">
+  <a id ='new-expirences' href="<%- newJourneyPublicationPath(journey) %>"> Añade una nueva Experiencia </a>
+</div>

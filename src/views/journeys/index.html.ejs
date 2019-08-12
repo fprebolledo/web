@@ -1,0 +1,53 @@
+
+  <div class='journey-display'>
+
+  <h1>Viajes de nuestros usuarios</h1>
+
+  <% if (currentUser) { %>
+    <div class="new">
+      <a id="new-expirences" href="<%- newJourneyPath(currentUser) %>"> ¡Registra tus viajes! </a>
+    </div>
+  <% } %>
+
+  <% if (!journeysList.length) { %>
+    <p>No existen viajes</p>
+  <% } else { %>
+
+
+  <% journeysList.forEach((journey) => { %>
+    <% if (currentUser && journey.userId == currentUser.id) {%>
+      <div class = 'single-journey currentUser'>
+    <% } else { %>
+      <div class = 'single-journey'>
+    <%} %>
+
+      <a class="imagen" href="<%- showJourneyPath(journey) %>">
+
+        <% if (!journey.imageUrl){%>
+          <img src="<%= assetPath('paisaje.png') %>" >
+        <% } else {  %>
+          <img class = 'journey-image' src="<%- journey.imageUrl %>">
+        <% }  %>
+      </a>
+
+      <a class="journey-info" href="<%- showJourneyPath(journey) %>">
+        <div class="journey-details">
+          <h3 class='title'><%- journey.title %>
+          </h3>
+          <div class='continent'><%- journey.continent %></div>
+          <div class='year'><%- journey.year %></div>
+          <div class='description'><%- journey.description.substring(0, 180) %></div>
+          <div class='username'><%- userList.find((user) => journey.userId == user.id).username %></div>
+        </div>
+      </a>
+      <% if (currentUser && journey.userId == currentUser.id) { %>
+        <div class="journey-actions">
+          <a class="edit-journey" href = "<%= editJourneyPath(currentUser, journey) %>" > editar </a>
+        </div>
+      <% } %>
+
+    </div>
+  <%})%>
+  <% } %>
+</div>
+

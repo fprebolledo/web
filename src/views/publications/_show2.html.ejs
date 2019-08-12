@@ -1,0 +1,83 @@
+
+<% if (currentUser){ %>
+
+<div class="publication-show scriptimages">
+	<div class ="rowp">
+		<div class = 'first-rowp'>
+			<% if (currentUser.id == publication.userId) { %>
+			<a id = 'editarp' href="<%- editPublicationPath(currentUser, publication) %>">Editar experiencia</a>
+			<% }  %>         
+			<div class="imagen">
+			<% if (!publication.images || !publication.images.length)  {%>
+					<img class = 'publication-image notscript' src="https://i.ytimg.com/vi/Lrwhm-iZx-A/maxresdefault.jpg">
+
+			<% } else {  %>
+				<% if (currentUser.id == publication.userId) { %>
+					<% publication.images.forEach( (url) => { %>
+							<img class = 'publication-image' src="<%= url %>">
+							<form action="<%- deleteImage(currentUser, publication, url) %>" enctype="multipart/form-data" method="POST">
+									<input type="hidden" name="_method" value="patch" />
+									<input class = "borrar-imagen" type="submit" value="Borrar imagen" />
+							</form>
+					<% });%>
+				<% } else {%>
+						<% publication.images.forEach( (url) => { %>
+						<img class='publication-image' src="<%= url %>">
+						<% });%>
+				<% }%>
+
+            <% }%>
+            <% if (currentUser.id == publication.userId) { %>
+                <button id="button-left">&#10094;</button>
+                <button id="button-right">&#10095;</button>
+            <% } else { %>
+                <button id="button-left_n">&#10094;</button>
+                <button id="button-right_n">&#10095;</button>
+            <% } %>
+            <div id="react-stars"></div>  
+                
+            </div>
+        </div>
+        <div class='second-rowp'>
+                <div class="field"> 
+                    <label > Lugar:</label> 
+                    <p ><%= publication.place%></p>
+                </div>
+                <div class="field"> 
+                    <label > Ciudad:</label> 
+                    <p ><%= publication.city%></p>
+                </div>
+                <div class="field"> 
+                    <label > Pais:</label> 
+                    <p ><%= publication.country %></p>
+                </div>
+                <div class="field"> 
+                    <label > Continente:</label> 
+                    <p ><%= publication.continent %></p>
+                </div>
+                <div class="field"> 
+                    <label > Cantidad de dias:</label> 
+                    <p ><%= publication.duration %></p>    
+                </div>
+                <div class="field" > 
+                    <label > Hospedaje:</label> 
+                    <p ><%= publication.host %></p>   
+                </div>
+                <div class="field"> 
+                    <label > Transporte:</label> 
+                    <p ><%= publication.transport %></p>   
+                </div>
+        </div>
+</div>
+    
+	<div class="content-publication" id="informacionf">
+		<div class="description">
+			<div class="field" > 
+				<h3 class='publication-title'>Detalles de la experiencia</h4>
+				<p ><%= publication.description %></p>
+			</div>
+		</div>
+	</div>
+</div>
+<%- include('comments')%>
+<%}%>

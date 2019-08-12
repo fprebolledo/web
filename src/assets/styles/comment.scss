@@ -1,0 +1,337 @@
+div.comment {
+  // label {
+  // font-family: Montserrat-SemiBold;
+	// text-align: center;
+  // color: rgb(0, 0, 0);
+  // padding: 10px 0px;
+  // }
+  textarea{
+    width: 100%;
+    margin-top: 20px;
+    font-size: 14px;
+    font-family: 'Helvetica Neue', sans-serif;
+  }
+}
+#p {
+  margin: 20px 0;
+  margin: 20px 0px;
+  padding: 10px 10px;
+  border: 1px solid grey;
+  background-color: white;
+  border-radius: 5px;
+}
+#p:hover {
+  background-color: rgb(202, 202, 202);
+}
+.button-without {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  /* show a hand cursor on hover; some argue that we
+  should keep the default arrow cursor for buttons */
+  cursor: pointer;
+  // color: blue;
+  margin-left: 20px;
+  margin-right: 0px;
+  position: relative;
+  top: -5px;
+  .far.fa-thumbs-down{
+    color: rgb(255, 0, 0);
+      font-size: 23px;
+
+  }
+  .far.fa-thumbs-up{
+    color:blue;
+      font-size: 23px;
+
+  }
+}
+.button-without.no{
+  .far.fa-thumbs-down{
+    color: rgb(0, 0, 0);
+      font-size: 23px;
+
+  }
+  .far.fa-thumbs-up{
+    color: rgb(0, 0, 0);
+      font-size: 23px;
+
+  }
+}
+.button-without.delete{
+  margin-left: 0px;
+  padding: 10px;
+  top: 0;
+  width:100%;
+
+}
+#submenu:hover{
+  .dropdown-content.comment{
+    display:block;
+    .button-without{
+      display: block;
+    }
+    .button-without:hover{
+      background-color: #9dec9d;
+    }
+  }
+}
+#submenu {
+  float:right;
+  margin-top: 5px;
+  position: inline-block;
+  position:relative;
+  // padding: 3px;
+  width: 30px;
+  text-align: center;
+  border: 1px solid grey;
+  border-radius: 5px;
+  .dropdown-content.comment{
+    position:absolute;
+    width:180px;
+    a:hover, form:hover{
+      background-color: grey;
+    }
+  }
+  .fas.fa-chevron-down{
+    font-size: 14px;
+  }
+  form{
+    height: 43.5px;
+  }
+}
+// estilos de la tabla
+#new-comment-publication{
+  margin-left: 0px;
+}
+#comments-list {
+  width:100%;
+  th {
+    // background-color: #CCD1E5;
+    text-align: center;
+  }
+
+  td {
+    background-color: #EEE;
+    border: 1px solid rgb(194, 194, 194);
+    padding: 10px;
+    text-align: center;
+
+  }
+}
+h1 {
+  text-align: center;
+}
+
+// estilos div dentro de la tabla
+// FRACASO DE LA VIDA.
+// .comment-content{
+//   min-height: 40px;
+//   min-width: 400px;;
+//   display: block;
+// }
+
+// .contenido-comentario{
+//   display: flex;
+//   justify-content: space-between;
+//   text-align: left;
+//   min-height: 10px;
+//   padding: 0;
+// }
+
+// .header{
+//   background-color: rgb(10, 10, 117);
+//   height: 25px;
+//   padding: 0;
+//   #comment-username{
+//     color: #EEE;
+//     margin-left: 4px;
+//     float: left;
+//     margin-top: 0;
+//     margin-bottom: 0;
+//   }
+//   #comment-date{
+//     color: #EEE;
+//     margin-top: 0;
+//     margin-bottom: 0;
+    
+//   }
+// }
+
+// .abajo{
+//   margin-left: 10px;
+// }
+
+// #ranking{
+//   float: left;
+// }
+// .mg{
+//   float: right;
+// }
+// #derecha{
+//   float: right;
+//   margin-left: 5px;
+// }
+
+// botón para editar y borrar
+div.comentarios{
+  align-items: center;
+  padding: 5px;
+}
+.dropbtn{
+  border: 0px;
+  background-color: transparent;
+}
+.dropdown{
+  display: inline-block;
+}
+
+#dropdown {
+  padding: 2px;
+  display: inline-block;
+  position: relative;
+  align-content: center;
+  margin: auto;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color:blue;
+}
+
+.fa-thumbs-up{
+  font-size: 30px;
+}
+.fa-thumbs-down{
+  font-size: 30px;
+}
+
+// WEA DEL Z
+#p .div {
+    margin: 0px;
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+#p .span {
+  margin: 0px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+hr.sep {
+    width: 10%;
+    float: left;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+br.sep {
+  display: block;
+  margin: 2px 0;
+}
+
+div.opciones{
+  display: inline-block;
+  width:100%;
+  div{
+  display: inline-block;
+  float: right;
+}
+}
+hr {
+  border-top: 2px solid gray;
+  width: 70%;
+  float: left;
+  }
+
+br {
+  display: block;
+  margin: 5px 0;
+  }
+br.bc {
+  display: block;
+  margin: 5px 0;
+  }
+#user-comment {
+  color: darkcyan
+  }
+#date-comment {
+  width: 85px;
+  margin-left: 10px;
+  color: grey
+  }
+#commentj {
+  max-width: 80%;
+  }
+#p div.header{
+  display: inline-block;
+}
+div.like {
+  width: 1px;
+  margin-left: 20px;
+  margin-right: 20px;
+  vertical-align: top;
+  position: relative;
+  top: -5px;
+  .far.fa-thumbs-down{
+    color: rgb(255, 0, 0);
+      font-size: 23px;
+
+  }
+  .far.fa-thumbs-up{
+    color:blue;
+      font-size: 23px;
+
+  }
+  }
+#likes-count {
+  vertical-align: top;
+  float: left;
+  color: grey;
+  }
+div.likes {
+  display: inline-block;
+}
+
+div span.links-user {
+  margin-left: 20px;
+  text-decoration: none;
+  color:grey;
+  }
+h2.title-comment{
+  font-family: Montserrat-SemiBold;
+  text-transform: uppercase;
+  text-align: left;
+
+}
+#destacados{
+  display: none;
+}
+.comentario-input{
+  width: 100%;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+}

@@ -1,0 +1,13 @@
+<% if (currentUser && currentUser.id === comment.userId) { %>
+  <div id="container">
+    <h2>Editar comentario</h2>
+    <p></p>
+    <%- include('_form') %>
+  </div>
+<% } else { %>
+  <div id="invalid-route">
+    <img src="http://www.stickpng.com/assets/images/5897a8c3cba9841eabab6156.png">
+    <h2>No tienes permitido editar comentarios de otros</h2>
+    <a class="volver" href="/">Menú principal</a>
+  </div>
+<% } %>

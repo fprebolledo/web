@@ -1,0 +1,7 @@
+<div id="container">
+  <% if (currentUser) { %>
+    <%- include('_show') %>
+  <% } else {%>
+    <%- include('../session/new') %>
+  <% }%>
+</div>

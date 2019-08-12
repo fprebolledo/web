@@ -1,0 +1,64 @@
+<div class="profile-display">
+	<% if (!user.influencer) { %>
+		<h2>Perfil</h2>
+	<% } else { %>
+		<h2 class="titulo-influencer">Perfil</h2>
+	<%} %>
+
+	<div class="profile-show">
+		<div class="profile-image">
+		<% if (!user.imageUrl)  {%>
+		<i class="fas fa-id-badge"></i>
+		<% } else {  %>
+			<%= console.log( user.imageUrl ) %>
+		<img class='user-image' src="<%- user.imageUrl %>">
+		<% }  %>
+		</div>
+		<% if (!user.influencer) { %>
+			<div class="profile-info">
+		<% } else { %>
+			<div class="profile-info influencer">
+		<%} %>
+			<p class="name"><%= user.name %></p>
+			<p class="username">@<%= user.username %></p>
+
+			<div class="email"> 
+				<img src="https://cdn4.iconfinder.com/data/icons/happily-colored-snlogo/512/gmail-email-mail-logo-circle-material.png">
+				<p><%= user.email %></p>
+			</div>
+			<p><%= user.age %> años</p>
+			<p class="puntaje">Usuario ranking <%= user.ranking %></p>
+		</div>
+	</div>
+	
+	<div class="acciones">
+		<% if (currentUser && currentUser.id == user.id){ %>
+			<div class='user-button'>
+				<a href="<%- userPublicationPath(user) %>">Ver Experiencias</a>
+			</div>
+			<div class='user-button'>
+				<a href="<%- userJourneyPath(user) %>">Ver Viajes</a>
+			</div>
+			<div class='user-button'>
+				<a href="<%- editUserPath(user) %>">Editar perfil</a>
+			</div>
+			<div class='user-button'>
+				<form onsubmit="return confirm('¿Realmente quieres dejar esta maravillosa APP?')" action="<%- deleteUserPath(user) %>" method="POST">
+					<input type="hidden" name="_method" value="delete" />
+					<input type="submit" value="Borrar cuenta" />
+				</form>
+			</div>
+		<% } else { %>
+			<div class='user-button' id="seguidores"></div>
+			<div class='user-button'>
+				<a href="<%- userPublicationPath(user) %>">Ver Experiencias</a>
+			</div>
+			<div class='user-button'>
+				<a href="<%- userJourneyPath(user) %>">Ver Viajes</a>
+			</div>
+		<% } %>
+	</div>
+	<div class="description"> 
+			<p><%= user.description %></p>
+		</div>
+</div>

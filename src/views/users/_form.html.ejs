@@ -1,0 +1,7 @@
+<div>
+      <% if (user.isNewRecord) { %>
+        <div data-new='1' data-url="<%= submitUserPath %>" id="react-user"></div>
+      <% } else { %>
+        <div data-new='0' data-url="<%= submitUserPath %>" id="react-user"></div>
+      <% } %>
+</div>
